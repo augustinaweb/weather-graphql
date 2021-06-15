@@ -12,7 +12,7 @@ interface Configuration extends webpack.Configuration {
 const config: Configuration = {
 	mode: 'development',
 	output: {
-		publicPath: '/',
+		publicPath: '/'
 	},
 	entry: './src/index.tsx',
 	module: {
@@ -26,10 +26,10 @@ const config: Configuration = {
 						presets: [
 							'@babel/preset-env',
 							'@babel/preset-react',
-							'@babel/preset-typescript',
-						],
-					},
-				},
+							'@babel/preset-typescript'
+						]
+					}
+				}
 			},
 			{
 				test: /\.css$/,
@@ -39,14 +39,14 @@ const config: Configuration = {
 				test: /\.(png|jpg|gif)$/,
 				use: ['file-loader']
 			}
-		],
+		]
 	},
 	resolve: {
-		extensions: ['.tsx', '.ts', '.js'],
+		extensions: ['.tsx', '.ts', '.js']
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: 'src/index.html',
+			template: 'src/index.html'
 		}),
 		new webpack.HotModuleReplacementPlugin(),
 		new ForkTsCheckerWebpackPlugin({
@@ -55,17 +55,17 @@ const config: Configuration = {
 		new ESLintPlugin({
 			failOnError: false,
 			emitWarning: true,
-			extensions: ['js', 'jsx', 'ts', 'tsx'],
-		}),
+			extensions: ['js', 'jsx', 'ts', 'tsx']
+		})
 	],
 	devtool: 'inline-source-map',
 	devServer: {
 		contentBase: path.join(__dirname, 'build'),
 		historyApiFallback: true,
-		port: 3000,
+		port: 5000,
 		open: true,
 		hot: true
-	},
+	}
 };
 
 export default config;

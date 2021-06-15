@@ -39,3 +39,7 @@ export interface CityByName_getCityByName {
 export interface CityByName {
   readonly getCityByName: CityByName_getCityByName | null;
 }
+
+export interface CityByNameVariables {
+  readonly name: string;
+}
